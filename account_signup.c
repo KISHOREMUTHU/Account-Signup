@@ -1,4 +1,4 @@
-// # Account-Signup
+// # Account-Signup Program Implementation
 //I have done a account signup project using C Programminag
 
 #include<stdio.h>
@@ -11,12 +11,14 @@
       char a[15],b[15],c[15];
  printf(" ACCOUNT SIGN-UP\n");     
     
- loop:   printf("\nEnter a valid password:");
+ //Label for initial password getting
+
+loop:   printf("\nEnter a valid password:");
     gets(a);
     
-  int n=strlen(a);
+  int n=strlen(a); //copy the characters of the string
     strcpy(b,a);
-    int c1=0;
+    int c1=0; //initialising count of small and capital alphabets ,numbers and special characters
     int c2=0;
     int c3=0;
     int c4=0;
@@ -37,10 +39,18 @@
          }   
         
       }  
+
+//Checking strength of password
+
  if(c4>0&&c1>0&&c2>0&&c3>0&&(c1+c2+c3+c4)>8&&(n>=8&&n<=15)){
                clrscr();
-         top:  printf("\nConfirm Password:");
+  
+ //Label for confirm password
+
+      top:  printf("\nConfirm Password:");
             gets(a);
+
+//Condition for confirmation of password
 
             if(strcmp(a,b)==0){
                printf("\nPassword has been set.\n");
@@ -73,9 +83,12 @@
            goto loop;
            }
         
-        
+   //Label for Login area
+     
   pass:     printf("\nLOGIN:\n");
  
+  //Password validation and account access process 
+
    printf("\nEnter Password:");
     
     gets(b);
